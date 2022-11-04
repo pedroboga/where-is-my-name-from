@@ -5,7 +5,7 @@
 //  Created by Pedro Boga on 03/11/22.
 //
 
-import Foundation
+import SwiftUI
 
 enum ApiError: Error {
     case invalidUrl
@@ -14,6 +14,7 @@ enum ApiError: Error {
 
 class NetworkManager {
     private let originURL = "https://api.nationalize.io?name="
+    private let flagURL = "https://countryflagsapi.com/png/"
     
     func nameOrigin(name: String) async throws -> Origin {
         guard let url = URL(string: originURL + name) else {
@@ -26,5 +27,12 @@ class NetworkManager {
         } catch {
             throw ApiError.invalidRequest
         }
+    }
+    
+    func getFlag(id: String) -> URL? {
+        guard let url = URL(string: flagURL + id) else {
+            return nil
+        }
+        return url
     }
 }

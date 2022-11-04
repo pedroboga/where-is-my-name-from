@@ -14,6 +14,7 @@
 		5AD1FC5929144B5E000EFEAF /* Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1FC5829144B5E000EFEAF /* Origin.swift */; };
 		5AD1FC5D29144EA9000EFEAF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1FC5C29144EA9000EFEAF /* MainView.swift */; };
 		5AD1FC5F29145BB0000EFEAF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1FC5E29145BB0000EFEAF /* MainViewModel.swift */; };
+		5AD1FC622915761A000EFEAF /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1FC612915761A000EFEAF /* FlagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		5AD1FC5829144B5E000EFEAF /* Origin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Origin.swift; sourceTree = "<group>"; };
 		5AD1FC5C29144EA9000EFEAF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5AD1FC5E29145BB0000EFEAF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		5AD1FC612915761A000EFEAF /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		5AD1FC45291449B8000EFEAF /* WhereIsMyNameFrom */ = {
 			isa = PBXGroup;
 			children = (
+				5AD1FC6029157600000EFEAF /* Components */,
 				5AD1FC5A29144E42000EFEAF /* Views */,
 				5AD1FC5729144AFC000EFEAF /* Models */,
 				5AD1FC5429144A35000EFEAF /* Service */,
@@ -106,6 +109,14 @@
 				5AD1FC5E29145BB0000EFEAF /* MainViewModel.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		5AD1FC6029157600000EFEAF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5AD1FC612915761A000EFEAF /* FlagView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				5AD1FC5629144A51000EFEAF /* NetworkManager.swift in Sources */,
 				5AD1FC47291449B8000EFEAF /* WhereIsMyNameFromApp.swift in Sources */,
 				5AD1FC5D29144EA9000EFEAF /* MainView.swift in Sources */,
+				5AD1FC622915761A000EFEAF /* FlagView.swift in Sources */,
 				5AD1FC5929144B5E000EFEAF /* Origin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

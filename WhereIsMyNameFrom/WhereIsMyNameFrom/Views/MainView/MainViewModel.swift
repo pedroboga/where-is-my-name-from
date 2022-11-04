@@ -13,6 +13,7 @@ class MainViewModel: ObservableObject {
     @Published var name = ""
     @Published var origin: Origin = Origin(country: [], name: "")
     
+    
     func search(name: String) {
         isLoading = true
         Task {

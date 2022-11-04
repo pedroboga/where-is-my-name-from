@@ -15,23 +15,14 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack {
-//                List {
-//                    ForEach(viewModel.origin.country) { country in
-//                        Text("\(country.countryID) - \(country.probability)")
-//                    }
-//                }
                 Chart(viewModel.origin.country) { country in
                     BarMark(
-//                        x: .value("Country", country.countryID),
-//                        y: .value("Probability", country.probability),
-//                        stacking: .center
-                        x: .value("Probability", country.probability),
-                        y: .value("Country", country.countryID)
+                        x: .value("Country", country.countryID),
+                        y: .value("Probability", country.probability)
                     )
-                    .annotation(position: .trailing) {
-                                        Image(systemName: "figure.stand")
-                                            .foregroundColor(.indigo)
-                                    }
+                    .annotation(position: .top) {
+                        FlagView(id: country.countryID)
+                    }
                     .foregroundStyle(by: .value("Probability", country.probability))
                 }
                 .frame(height: 200)
