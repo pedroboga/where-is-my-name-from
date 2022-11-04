@@ -13,7 +13,7 @@ enum ApiError: Error {
 }
 
 class NetworkManager {
-    private let originURL = ""
+    private let originURL = "https://api.nationalize.io?name="
     
     func nameOrigin(name: String) async throws -> Origin {
         guard let url = URL(string: originURL + name) else {

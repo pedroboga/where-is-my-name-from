@@ -12,7 +12,8 @@ struct Origin: Codable {
     let name: String
 }
 
-struct Country: Codable {
+struct Country: Codable, Identifiable {
+    var id = UUID()
     let countryID: String
     let probability: Double
 
