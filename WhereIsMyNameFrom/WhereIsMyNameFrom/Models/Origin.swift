@@ -8,9 +8,13 @@
 import Foundation
 
 struct Origin: Codable, Identifiable {
-    var id = UUID()
+    let id = UUID()
     let country: [Country]
     let name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case country, name
+    }
 }
 
 struct Country: Codable, Identifiable {
