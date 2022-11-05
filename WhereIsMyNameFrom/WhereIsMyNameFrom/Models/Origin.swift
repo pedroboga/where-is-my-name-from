@@ -15,7 +15,10 @@ struct Origin: Codable {
 struct Country: Codable, Identifiable {
     var id = UUID()
     let countryID: String
-    let probability: Double
+    var probability: Double
+    var probabilityPercentage: Double {
+            return self.probability * 100
+        }
 
     enum CodingKeys: String, CodingKey {
         case countryID = "country_id"

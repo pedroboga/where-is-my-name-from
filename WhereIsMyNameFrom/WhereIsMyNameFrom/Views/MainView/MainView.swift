@@ -18,13 +18,14 @@ struct MainView: View {
                 Chart(viewModel.origin.country) { country in
                     BarMark(
                         x: .value("Country", country.countryID),
-                        y: .value("Probability", country.probability)
+                        y: .value("Probability", country.probabilityPercentage)
                     )
                     .annotation(position: .top) {
                         FlagView(id: country.countryID)
                     }
-                    .foregroundStyle(by: .value("Probability", country.probability))
+                    .foregroundStyle(by: .value("Probability", country.probabilityPercentage))
                 }
+                //.chartYScale(domain: 0...100)
                 .frame(height: 200)
                 .padding()
                 Spacer()
