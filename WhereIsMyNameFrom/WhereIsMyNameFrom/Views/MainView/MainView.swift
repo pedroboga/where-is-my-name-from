@@ -29,6 +29,10 @@ struct MainView: View {
                 .frame(height: 200)
                 .padding()
                 Spacer()
+                
+                List(viewModel.items) { item in
+                    Text("\(item.name)")
+                }
             }
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -39,6 +43,9 @@ struct MainView: View {
             })
             //.navigationTitle("Where is my name from?")
             .searchable(text: $nameSearch)
+        }
+        .onAppear {
+            viewModel.getItemsHistory()
         }
         .onSubmit(of: .search) {
             Task {
