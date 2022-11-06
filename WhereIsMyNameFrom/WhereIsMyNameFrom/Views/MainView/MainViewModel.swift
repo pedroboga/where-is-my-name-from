@@ -15,6 +15,9 @@ class MainViewModel: ObservableObject {
     @Published var items: [Origin] = []
     private let itemsKey: String = "searchHistory"
     
+    init() {
+        getItemsHistory()
+    }
     
     func search(name: String) {
         isLoading = true

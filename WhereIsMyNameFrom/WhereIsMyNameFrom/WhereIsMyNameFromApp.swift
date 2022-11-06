@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct WhereIsMyNameFromApp: App {
+    @StateObject var mainViewModel: MainViewModel = MainViewModel()
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(mainViewModel)
         }
     }
 }
