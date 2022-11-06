@@ -15,19 +15,25 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Chart(viewModel.origin.country) { country in
-                    BarMark(
-                        x: .value("Country", country.countryID),
-                        y: .value("Probability", country.probabilityPercentage)
-                    )
-                    .annotation(position: .top) {
-                        FlagView(id: country.countryID)
+                if nameSearch.isEmpty {
+                    Text("Type your name and search its origins!")
+                        .font(.title3)
+                        .frame(height: 200)
+                } else {
+                    Chart(viewModel.origin.country) { country in
+                        BarMark(
+                            x: .value("Country", country.countryID),
+                            y: .value("Probability", country.probabilityPercentage)
+                        )
+                        .annotation(position: .top) {
+                            FlagView(id: country.countryID)
+                        }
+                        .foregroundStyle(by: .value("Probability", country.probabilityPercentage))
                     }
-                    .foregroundStyle(by: .value("Probability", country.probabilityPercentage))
+                    //.chartYScale(domain: 0...100)
+                    .frame(height: 200)
+                    .padding()
                 }
-                //.chartYScale(domain: 0...100)
-                .frame(height: 200)
-                .padding()
                 Spacer()
                 Text("Search history:")
                     .font(.title2)
