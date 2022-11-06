@@ -9,7 +9,7 @@ import SwiftUI
 import Charts
 
 struct MainView: View {
-    @StateObject var viewModel = MainViewModel()
+    @EnvironmentObject var viewModel: MainViewModel
     @State var nameSearch: String = ""
     
     var body: some View {
@@ -29,10 +29,14 @@ struct MainView: View {
                 .frame(height: 200)
                 .padding()
                 Spacer()
-                
+                Text("Search history:")
+                    .font(.title2)
+                    .bold()
                 List(viewModel.items) { item in
-                    Text("\(item.name)")
+                    SearchHistoryCell(object: item)
                 }
+                .listStyle(.plain)
+                Spacer()
             }
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -41,11 +45,7 @@ struct MainView: View {
                         .bold()
                 }
             })
-            //.navigationTitle("Where is my name from?")
             .searchable(text: $nameSearch)
-        }
-        .onAppear {
-            viewModel.getItemsHistory()
         }
         .onSubmit(of: .search) {
             Task {
@@ -58,5 +58,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(MainViewModel())
     }
 }
